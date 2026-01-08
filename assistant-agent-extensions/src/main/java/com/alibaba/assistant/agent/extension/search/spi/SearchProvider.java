@@ -1,0 +1,56 @@
+/*
+ * Copyright 2024-2025 the original author or authors.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      https://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package com.alibaba.assistant.agent.extension.search.spi;
+
+import com.alibaba.assistant.agent.extension.search.model.SearchRequest;
+import com.alibaba.assistant.agent.extension.search.model.SearchResultItem;
+import com.alibaba.assistant.agent.extension.search.model.SearchSourceType;
+
+import java.util.List;
+
+/**
+ * 搜索数据源提供者SPI接口
+ * 代表某一类数据源（项目上下文、知识库、Web搜索等）的搜索能力
+ *
+ * @author canfeng
+ */
+public interface SearchProvider {
+	/**
+	 * 判断是否支持指定的数据源类型
+	 *
+	 * @param type 数据源类型
+	 * @return 是否支持
+	 */
+	boolean supports(SearchSourceType type);
+
+	/**
+	 * 执行搜索
+	 *
+	 * @param request 搜索请求
+	 * @return 搜索结果列表
+	 */
+	List<SearchResultItem> search(SearchRequest request);
+
+	/**
+	 * 获取Provider名称
+	 *
+	 * @return Provider名称
+	 */
+	default String getName() {
+		return this.getClass().getSimpleName();
+	}
+}
+
