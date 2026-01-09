@@ -21,6 +21,9 @@
 
 **Assistant Agent** is an enterprise-grade intelligent assistant framework built on [Spring AI Alibaba](https://github.com/alibaba/spring-ai-alibaba), adopting the Code-as-Action paradigm to orchestrate tools and complete tasks by generating and executing code. It's an intelligent assistant solution that **understands, acts, and learns**.
 
+* <a href="https://java2ai.com/agents/assistantagent/quick-start" target="_blank">Documentation</a>
+* <a href="https://java2ai.com/docs/overview" target="_blank">Spring AI Alibaba</a>
+
 ### What Can Assistant Agent Do?
 
 Assistant Agent is a fully-featured intelligent assistant with the following core capabilities:
